@@ -5,7 +5,10 @@
   "scripts": {
     "ng": "nx",
     "postinstall": "node ./decorate-angular-cli.js && ngcc --properties es2020 browser module main",
-    "start": "nx serve",
+    "start:frontend": "nx run tasker:serve",
+    "start:backend": "nx run api:serve",
+    "start:parralel": "nx run-many --parallel --target=serve --projects=api,tasker",
+    "start:api": "nx run-many --parallel --target=serve --projects=api,tasker",
     "build": "nx build",
     "test": "nx test"
   },
@@ -43,7 +46,7 @@
     "@nrwl/eslint-plugin-nx": "14.4.2",
     "@nrwl/jest": "14.4.2",
     "@nrwl/linter": "14.4.2",
-    "@nrwl/nest": "14.4.2",
+    "@nrwl/nest": "^14.4.2",
     "@nrwl/node": "14.4.2",
     "@nrwl/workspace": "14.4.2",
     "@types/jest": "27.4.1",

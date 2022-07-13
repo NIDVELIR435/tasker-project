@@ -15,7 +15,9 @@
     "skipDefaultLibCheck": true,
     "baseUrl": ".",
     "paths": {
-      "@tasker/api-interfaces": ["libs/api-interfaces/src/index.ts"]
+      "@tasker/api-interfaces": ["libs/api-interfaces/src/index.ts"],
+      "@tasker/frontend/*": ["apps/tasker/*"],
+      "@tasker/backend/*": ["apps/api/*"]
     }
   },
   "exclude": ["node_modules", "tmp"]
