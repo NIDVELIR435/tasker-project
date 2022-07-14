@@ -1,6 +1,5 @@
 import { Test } from '@nestjs/testing';
-import {AppService} from "@tasker/backend/src/app/app.service";
-
+import { AppService } from '@tasker/backend/src/modules/app.service';
 
 describe('AppService', () => {
   let service: AppService;

@@ -1,6 +1,6 @@
 import { Controller, Get } from '@nestjs/common';
 import { Message } from '@tasker/api-interfaces';
-import { AppService } from '@tasker/backend/src/app/app.service';
+import { AppService } from '@tasker/backend/src/modules/app.service';
 
 @Controller()
 export class AppController {

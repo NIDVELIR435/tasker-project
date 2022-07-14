@@ -1,0 +1,33 @@
+# docker-compose.yml
+
+version: '3'
+services:
+#  redis:
+#    image: redis:latest
+#    ports:
+#      - '6379:6379'
+#  rcli:
+#    image: redis:latest
+#    links:
+#      - redis
+#    command: redis-cli -h redis
+  db:
+    image: mysql:5.7
+    restart: always
+    ports:
+      - '3306:3306'
+    environment:
+      - MYSQL_USER=mysql
+      - MYSQL_PASSWORD=password
+      - MYSQL_ROOT_PASSWORD=password
+      - MYSQL_ALLOW_EMPTY_PASSWORD=false
+      - MYSQL_RANDOM_ROOT_PASSWORD=false
+      - MYSQL_DATABASE=tasker_sql
+    expose:
+      # Opens port 3306 on the container
+      - '3306'
+    volumes:
+      - pg_data:/var/lib/postgresql/data
+
+volumes:
+  pg_data:
