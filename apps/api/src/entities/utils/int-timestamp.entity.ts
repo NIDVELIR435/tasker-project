@@ -1,5 +1,5 @@
 import { PrimaryGeneratedColumn } from 'typeorm';
-import { TimestampEntity } from '@tasker/backend/src/entites/utils/timestamp.entity';
+import { TimestampEntity } from '@tasker/backend/src/entities/utils/timestamp.entity';
 import { ApiProperty } from '@nestjs/swagger';
 import { DecorateAll } from '@tasker/backend/common/decorators';
 

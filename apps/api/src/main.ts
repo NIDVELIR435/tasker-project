@@ -1,11 +1,10 @@
-import { Logger } from '@nestjs/common';
 import { NestFactory } from '@nestjs/core';
 import { AppModule } from '@tasker/backend/src/modules/app.module';
 import { DocumentBuilder, SwaggerModule } from '@nestjs/swagger';
 
 async function bootstrap() {
   const app = await NestFactory.create(AppModule, {
-    cors: { origin: true }, //todo Remove after test
+    cors: { origin: true },
   });
   const globalPrefix = 'api';
   app.setGlobalPrefix(globalPrefix);
@@ -16,9 +15,6 @@ async function bootstrap() {
   SwaggerModule.setup(`${globalPrefix}/swagger`, app, document);
 
   await app.listen(port);
-  Logger.log(
-    `🚀 Application is running on: http://localhost:${port}/${globalPrefix}`
-  );
 }
 
 bootstrap().catch(console.error);

@@ -10,6 +10,7 @@ export class DbConfig {
   readonly database: string;
   readonly logging: boolean;
   readonly synchronize: boolean;
+  readonly serverEnv: string;
 
   constructor(private readonly configService: AppConfigService) {
     this.host = this.configService.get('DB_HOST');
@@ -19,5 +20,6 @@ export class DbConfig {
     this.database = this.configService.get('DB_NAME');
     this.logging = this.configService.get('DB_LOGGING') !== 'false';
     this.synchronize = this.configService.get('DB_SYNCHRONIZE') !== 'false';
+    this.serverEnv = this.configService.get('SERVER_ENV');
   }
 }

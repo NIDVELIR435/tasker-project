@@ -1,0 +1,17 @@
+{
+  "name": "development",
+  "type": "mysql",
+  "host": "localhost",
+  "port": 3306,
+  "username": "mysql",
+  "password": "password",
+  "database": "tasker_sql",
+  "synchronize": true,
+  "logging": true,
+  "entities": ["apps/api/src/entities/**/*.entity.ts"],
+  "migrationsTableName": "migrations_table",
+  "migrations": ["apps/api/src/migration/*.ts"],
+  "cli": {
+    "migrationsDir": "apps/api/src/migration"
+  }
+}
